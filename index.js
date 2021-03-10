@@ -1,6 +1,6 @@
 const formularioForm = document.getElementById('formulario');
-const emailInput = document.getElementById('inputEmail');
-const nombreInput = document.getElementById('inputNombre');
+const textoInput = document.getElementById('inputTexto');
+const notaInput = document.getElementById('inputNota');
 const usuariosTable = document.getElementById('tabla');
 const json = localStorage.getItem('usuarios'); // Traer de localStorage el dato asociado a la key "usuarios".
 let usuarios = JSON.parse(json) || []; // Convertir datos de un string JSON a código JavaScript.
@@ -16,8 +16,8 @@ formularioForm.onsubmit = function (e) {
     e.preventDefault();
     const usuario = {
         id: generarID(),
-        email: emailInput.value,
-        nombre: nombreInput.value,
+        email: notaInput.value,
+        nombre: textoInput.value,
         registro: Date.now(),
     };
     usuarios.push(usuario);
@@ -49,7 +49,6 @@ function mostrarUsuarios() {
                 <td>${usuario.email}</td>
                 
                 <td>
-                    <button onclick="mostrarDetalle('${usuario.id}')" type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver detalle</button>
                     <button onclick="eliminarUsuario('${usuario.id}')" class="btn btn-danger btn-sm">Eliminar</button>
                 </td>
             </tr>

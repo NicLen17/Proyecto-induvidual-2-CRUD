@@ -1,0 +1,45 @@
+.formulario {
+    background-color: rgb(255, 255, 255);
+    max-width: 600px;
+    padding: 3rem;
+    margin: 2rem auto;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    margin-bottom: 150px;
+}
+
+.formulario :hover {
+    color: blueviolet;
+}
+
+.flexnombres {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.formulario label {
+    display: block;
+}
+
+.formulario input, .formulario textarea {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-bottom: 2px rgb(0, 0, 0) solid;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.boton {
+    padding: 0.7rem 3rem;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 20px;
+}
+
+.contenedorboton {
+    display: flex;
+    justify-content: center;
+    }
