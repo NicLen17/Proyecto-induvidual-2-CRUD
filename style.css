@@ -1,3 +1,8 @@
+
+body {
+    background-image: url(./img/af8d63a477078732b79ff9d9fc60873f.jpg);
+}
+
 .formulario {
     background-color: rgb(255, 255, 255);
     max-width: 600px;
@@ -5,10 +10,10 @@
     margin: 2rem auto;
     color: rgb(0, 0, 0);
     font-size: 1.2rem;
-    margin-bottom: 150px;
+    margin-bottom: 10px;
 }
 
-.formulario :hover {
+.flexnombres :hover {
     color: blueviolet;
 }
 
@@ -42,4 +47,10 @@
 .contenedorboton {
     display: flex;
     justify-content: center;
+    }
+
+
+    .table {
+        text-align: center;
+        color: white;
     }
