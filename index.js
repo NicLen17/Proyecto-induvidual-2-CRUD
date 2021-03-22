@@ -16,8 +16,8 @@ formularioForm.onsubmit = function (e) {
     e.preventDefault();
     const usuario = {
         id: generarID(),
-        email: notaInput.value,
-        nombre: textoInput.value,
+        titulo: notaInput.value,
+        nota: textoInput.value,
         registro: Date.now(),
     };
     usuarios.push(usuario);
@@ -42,14 +42,14 @@ function mostrarUsuarios() {
     let filas = [];
     for (let i = 0; i < usuarios.length; i++) {
         const usuario = usuarios[i];
-        const fecha = new Date(usuario.registro);
         const tr = `
             <tr>
-                <td>${usuario.nombre}</td>
-                <td>${usuario.email}</td>
+                <td>${usuario.titulo}</td>
+                <td>${usuario.nota}</td>
                 
                 <td>
                     <button onclick="eliminarUsuario('${usuario.id}')" class="btn btn-danger btn-sm">Eliminar</button>
+                    <button onclick="mostrarDetalle('${usuario.id}')" type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#mDetalles">Detalles</button>
                 </td>
             </tr>
         `;
@@ -80,8 +80,14 @@ function eliminarUsuario(id) {
 function mostrarDetalle(id) {
     const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
     console.log('mostrarDetalle - usuarioEncontrado', usuarioEncontrado);
-    // const detalleDiv = document.getElementById('detalleUsuario');
-    // detalleDiv.innerHTML = usuarioEncontrado.nombre;
+    const detalleDiv = document.getElementById('detalleUsuario');
+    const fecha = new Date(usuarioEncontrado.registro);
+    const usersDetalles = `
+    <p>Titulo: ${usuarioEncontrado.titulo}</p>
+    <p>Nota: ${usuarioEncontrado.nota}</p>
+    <p>Fecha de registro: ${fecha.toLocaleString()}</p> 
+    `
+    detalleDiv.innerHTML = usersDetalles;
 }
 
 
